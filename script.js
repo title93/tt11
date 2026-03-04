@@ -7,7 +7,6 @@ const heartsLayer = document.getElementById("hearts");
 
 function setStatus(msg, type = "info") {
   if (!statusBox) return;
-
   statusBox.style.display = "block";
   statusBox.textContent = msg;
   statusBox.style.borderColor =
@@ -20,7 +19,6 @@ function setStatus(msg, type = "info") {
 
 function toggleOpen() {
   if (!envelope) return;
-
   envelope.classList.toggle("open");
   envelope.setAttribute(
     "aria-pressed",
@@ -70,9 +68,7 @@ function spawnHeart() {
 
   heartsLayer.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 8000);
+  setTimeout(() => heart.remove(), 8000);
 }
 
 function startHearts() {
@@ -93,10 +89,10 @@ if (envelope) {
 }
 
 // --------------------
-// Email sending by hidden form
+// Email sending
 // --------------------
-const TO_EMAIL = "titletukta2546@gmail.com";
-const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzikYJ_q_76Wd-UTb77dFQ4JZXlGOcWUsch1-2VrBwiMsQ9Uv-jWEQ7WRcDh0TfaFg_/exec";
+const TO_EMAIL = "titleukta2546@gmail.com";
+const GAS_WEBAPP_URL = "ใส่ลิงก์ /exec ของเติ้ลตรงนี้";
 
 function sendEmailByForm(answer) {
   if (!GAS_WEBAPP_URL) {
@@ -127,9 +123,7 @@ function sendEmailByForm(answer) {
   document.body.appendChild(form);
   form.submit();
 
-  setTimeout(() => {
-    form.remove();
-  }, 1000);
+  setTimeout(() => form.remove(), 1000);
 }
 
 function handleAnswer(answer) {
