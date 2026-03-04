@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>เป็นแฟนกันนะ 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="hearts"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <h1 class="title">💌 มีจดหมายถึงคุณ</h1>
+      <p class="subtitle">กดที่ซองจดหมายเพื่อเปิดอ่านข้อความข้างใน</p>
+
+      <div class="envelope-area">
+        <div id="envelope" class="envelope" tabindex="0" aria-pressed="false">
+          <div class="back"></div>
+
+          <div class="letter">
+            <h2>ถึงคนพิเศษของเรา</h2>
+            <p>
+              มีบางอย่างที่เราอยากบอกมานานแล้ว
+              เรารู้สึกดีทุกครั้งเวลาที่ได้คุย ได้เจอ และได้มีเธออยู่ในวันธรรมดา ๆ ของเรา
+            </p>
+            <p>
+              ไม่รู้ว่าคำตอบจะเป็นยังไง แต่เราอยากพูดออกไปตรง ๆ ว่า...
+            </p>
+
+            <hr>
+
+            <h3 class="question">เป็นแฟนกันได้ไหม 💖</h3>
+
+            <div class="actions">
+              <button id="btnYes" class="btn yes" type="button">ตกลง</button>
+              <button id="btnNo" class="btn no" type="button">ไม่ตกลง</button>
+            </div>
+
+            <p class="hint">*เมื่อกดตอบ ระบบสามารถแสดงผลหรือส่งอีเมลได้ตามที่ตั้งค่าไว้</p>
+            <div id="status" class="status"></div>
+          </div>
+
+          <div class="front"></div>
+          <div class="flap"></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        ทำด้วยความตั้งใจล้วน ๆ
+      </footer>
+    </section>
+  </main>
+
+    <audio id="song" src="better-together.mp3" loop preload="auto"></audio>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <script src="script.js"></script>
+</body>
+</html>
