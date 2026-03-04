@@ -1,0 +1,244 @@
+:root{
+  --paper:#fff8ee;
+  --ink:#2a1a1a;
+  --yes:#16c784;
+  --no:#ff5a5f;
+  --shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color:white;
+  background:#000000;
+}
+
+.wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+.card{
+  width:min(720px, 95vw);
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:22px 18px 18px;
+  box-shadow: var(--shadow);
+  text-align:center;
+}
+
+.title{
+  margin:0 0 6px;
+  font-size:28px;
+}
+
+.subtitle{
+  margin:0 0 18px;
+  opacity:.85;
+}
+
+.envelope-area{
+  display:grid;
+  place-items:center;
+  padding:18px 0 10px;
+}
+
+.envelope{
+  position:relative;
+  width:min(520px, 92vw);
+  height:320px;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.envelope.open{
+  overflow:visible;
+}
+
+.envelope .back{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(145deg, #f0c6d9, #ffd3e6);
+  border-radius:18px;
+  filter: drop-shadow(0 20px 35px rgba(0,0,0,.35));
+  z-index:1;
+}
+
+.envelope .front{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, transparent 49%, rgba(0,0,0,.06) 50%, transparent 52%),
+    linear-gradient(45deg, transparent 49%, rgba(0,0,0,.06) 50%, transparent 52%),
+    linear-gradient(145deg, #f7d0e2, #ffe1f0);
+  border-radius:18px;
+  z-index:3;
+}
+
+.envelope .flap{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:58%;
+  background: linear-gradient(145deg, #ffb9da, #ffd0e8);
+  border-radius:18px 18px 10px 10px;
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition: transform .9s ease;
+  z-index:4;
+  clip-path: polygon(0 0, 100% 0, 50% 95%);
+}
+
+.letter{
+  position:absolute;
+  left:50%;
+  bottom:20px; /* วางกระดาษให้อยู่ในซองตั้งแต่แรก */
+  transform:translateX(-50%) translateY(85%);
+  width:88%;
+  height:260px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  z-index:2;
+  overflow:auto;
+  transition: transform .9s ease;
+}
+
+.letter h2{
+  margin:0 0 8px;
+  font-size:22px;
+}
+
+.letter p{
+  margin:0 0 12px;
+  line-height:1.6;
+}
+
+.letter hr{
+  border:none;
+  height:1px;
+  background:rgba(0,0,0,.12);
+  margin:12px 0;
+}
+
+.question{
+  margin:0 0 10px;
+  color:#5a1f40;
+  text-align:center;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  border:none;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.btn:active{
+  transform: scale(.98);
+}
+
+.btn.ghost{
+  background:#ffffff;
+  color:#3b1a2b;
+  border:1px solid rgba(0,0,0,.12);
+}
+
+.btn.yes{
+  background: linear-gradient(90deg, var(--yes), #39e6a6);
+  color:#04321f;
+}
+
+.btn.no{
+  background: linear-gradient(90deg, var(--no), #ff8a8e);
+  color:#3a0608;
+}
+
+.hint{
+  font-size:12px;
+  opacity:.75;
+  margin-top:10px;
+  text-align:center;
+}
+
+.status{
+  margin-top:10px;
+  font-size:14px;
+  padding:10px 12px;
+  border-radius:12px;
+  background: rgba(0,0,0,.06);
+  border:1px dashed rgba(0,0,0,.15);
+  display:none;
+  text-align:center;
+}
+
+.footer{
+  margin-top:14px;
+  opacity:.7;
+  text-align:center;
+  font-size:14px;
+}
+
+/* ตอนเปิดซอง */
+.envelope.open .flap{
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter{
+  transform:translateX(-50%) translateY(-35%);
+  z-index:10;
+}
+
+/* หัวใจตก */
+#hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  top:-40px;
+  font-size:18px;
+  opacity:.9;
+  animation: fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform: translateY(calc(100vh + 80px)) rotate(360deg);
+    opacity:.1;
+  }
+}
