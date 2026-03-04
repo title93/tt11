@@ -91,8 +91,8 @@ if (envelope) {
 // --------------------
 // Email sending
 // --------------------
-const TO_EMAIL = "titleukta2546@gmail.com";
-const GAS_WEBAPP_URL = "ใส่ลิงก์ /exec ของเติ้ลตรงนี้";
+const TO_EMAIL = "titletukta2546@gmail.com";
+const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzikYJ_q_76Wd-UTb77dFQ4JZXlGOcWUsch1-2VrBwiMsQ9Uv-jWEQ7WRcDh0TfaFg_/exec";
 
 function sendEmailByForm(answer) {
   if (!GAS_WEBAPP_URL) {
@@ -143,3 +143,4 @@ if (btnYes) {
 if (btnNo) {
   btnNo.addEventListener("click", () => handleAnswer("ไม่ตกลง"));
 }
+
